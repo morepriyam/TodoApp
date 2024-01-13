@@ -1,5 +1,4 @@
 const zod = require("zod");
-const z = zod();
 
 const createTodo = zod.object({
   titile: zod.string(),
