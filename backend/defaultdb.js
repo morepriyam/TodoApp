@@ -10,6 +10,6 @@ const todoSchema = mongoose.Schema({
   completed: Boolean
 })
 
-const todo = mongoose.model('todos', todoSchema);
+const Todo = mongoose.model('todos', todoSchema);
 
-module.exports = { todo };
+module.exports = { Todo };
