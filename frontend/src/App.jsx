@@ -7,17 +7,15 @@ function App() {
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
-    setInterval(() => {
-      fetch("http://localhost:3000/todos").then(async (res) => {
-        const data = await res.json();
-        setTodos(data.todos);
-      });
-    }, 1000);
+    fetch("http://localhost:3000/todos").then(async (res) => {
+      const data = await res.json();
+      setTodos(data.todos);
+    });
   }, []);
 
   return (
     <div>
-      <CreateTodo />
+      <CreateTodo setTodos={setTodos} />
       <Todos todos={todos} />
     </div>
   );
